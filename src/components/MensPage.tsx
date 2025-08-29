@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ProductCard } from "./ProductCard";
 import { ProductModal } from "./ProductModal";
-import { Badge } from "./ui/badge";
+// import { Badge } from "./ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 
 // Men's specific product data
@@ -106,7 +106,7 @@ interface MensPageProps {
   onProductClick?: (productId: string) => void;
 }
 
-export function MensPage({ onProductClick }: MensPageProps) {
+export function MensPage ({ onProductClick }: MensPageProps) {
   const [selectedProduct, setSelectedProduct] = useState<typeof mensProducts[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -127,9 +127,9 @@ export function MensPage({ onProductClick }: MensPageProps) {
   };
 
   const categories = ["all", "suiting", "casual", "footwear", "accessories", "outerwear"];
-  
-  const filteredProducts = selectedCategory === "all" 
-    ? mensProducts 
+
+  const filteredProducts = selectedCategory === "all"
+    ? mensProducts
     : mensProducts.filter(product => product.category.toLowerCase() === selectedCategory);
 
   return (
@@ -155,7 +155,7 @@ export function MensPage({ onProductClick }: MensPageProps) {
                   Discover refined menswear that embodies sophistication and modern elegance. From tailored suiting to contemporary casual pieces.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group">
                   Shop Collection
@@ -176,7 +176,7 @@ export function MensPage({ onProductClick }: MensPageProps) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Floating badge */}
               <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-2 rounded-full">
                 <span className="text-sm">New Season</span>
@@ -201,11 +201,10 @@ export function MensPage({ onProductClick }: MensPageProps) {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-3 py-1.5 text-sm rounded-full transition-colors whitespace-nowrap ${
-                      selectedCategory === category
+                    className={`px-3 py-1.5 text-sm rounded-full transition-colors whitespace-nowrap ${selectedCategory === category
                         ? "bg-primary text-primary-foreground"
                         : "bg-muted hover:bg-muted/80"
-                    }`}
+                      }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>
