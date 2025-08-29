@@ -72,13 +72,28 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
             <Button variant="ghost" size="icon" className="sm:hidden">
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => onNavigate('wishlist')}
+              className={currentPage === 'wishlist' ? 'text-primary' : ''}
+            >
               <Heart className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => onNavigate('profile')}
+              className={currentPage === 'profile' ? 'text-primary' : ''}
+            >
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => onNavigate('bag')}
+              className={currentPage === 'bag' ? 'text-primary' : ''}
+            >
               <ShoppingBag className="h-5 w-5" />
             </Button>
           </div>

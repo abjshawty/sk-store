@@ -41,7 +41,7 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
               size="icon" 
               variant="secondary" 
               className="h-8 w-8 bg-background/90 hover:bg-background"
-              onClick={(e) => {
+              onClick={(e: React.MouseEvent) => {
                 e.stopPropagation();
                 // Handle wishlist action
               }}

@@ -14,7 +14,7 @@ const ToggleGroupContext = React.createContext<
   variant: "default",
 });
 
-function ToggleGroup ({
+function ToggleGroup({
   className,
   variant,
   size,
@@ -40,7 +40,7 @@ function ToggleGroup ({
   );
 }
 
-function ToggleGroupItem ({
+function ToggleGroupItem({
   className,
   children,
   variant,

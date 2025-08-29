@@ -105,7 +105,7 @@ interface WomensPageProps {
   onProductClick?: (productId: string) => void;
 }
 
-export function WomensPage ({ onProductClick }: WomensPageProps) {
+export function WomensPage({ onProductClick }: WomensPageProps) {
   const [selectedProduct, setSelectedProduct] = useState<typeof womensProducts[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -126,9 +126,9 @@ export function WomensPage ({ onProductClick }: WomensPageProps) {
   };
 
   const categories = ["all", "dresses", "blouses", "skirts", "outerwear", "handbags", "footwear", "jewelry", "accessories"];
-
-  const filteredProducts = selectedCategory === "all"
-    ? womensProducts
+  
+  const filteredProducts = selectedCategory === "all" 
+    ? womensProducts 
     : womensProducts.filter(product => product.category.toLowerCase() === selectedCategory);
 
   return (
@@ -154,7 +154,7 @@ export function WomensPage ({ onProductClick }: WomensPageProps) {
                   Discover our curated selection of women's fashion that celebrates elegance, sophistication, and timeless style.
                 </p>
               </div>
-
+              
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group">
                   Shop Collection
@@ -175,7 +175,7 @@ export function WomensPage ({ onProductClick }: WomensPageProps) {
                   className="w-full h-full object-cover"
                 />
               </div>
-
+              
               {/* Floating badge */}
               <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-2 rounded-full">
                 <span className="text-sm">New Arrivals</span>
@@ -200,10 +200,11 @@ export function WomensPage ({ onProductClick }: WomensPageProps) {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-3 py-1.5 text-sm rounded-full transition-colors whitespace-nowrap ${selectedCategory === category
+                    className={`px-3 py-1.5 text-sm rounded-full transition-colors whitespace-nowrap ${
+                      selectedCategory === category
                         ? "bg-primary text-primary-foreground"
                         : "bg-muted hover:bg-muted/80"
-                      }`}
+                    }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>

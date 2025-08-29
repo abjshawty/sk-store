@@ -6,7 +6,7 @@ import { CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
-function RadioGroup({
+function RadioGroup ({
   className,
   ...props
 }: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {
@@ -19,7 +19,7 @@ function RadioGroup({
   );
 }
 
-function RadioGroupItem({
+function RadioGroupItem ({
   className,
   ...props
 }: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {

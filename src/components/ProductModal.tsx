@@ -22,7 +22,7 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
-export function ProductModal ({ product, isOpen, onClose }: ProductModalProps) {
+export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0">
@@ -31,7 +31,7 @@ export function ProductModal ({ product, isOpen, onClose }: ProductModalProps) {
         <DialogDescription className="sr-only">
           Product details for {product.name} by {product.brand}. Price: ${product.price}. {product.description}
         </DialogDescription>
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           {/* Product Image */}
           <div className="relative bg-muted/30">
@@ -113,7 +113,7 @@ export function ProductModal ({ product, isOpen, onClose }: ProductModalProps) {
                   Request Information
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-
+                
                 <div className="flex gap-3">
                   <Button variant="outline" className="flex-1">
                     <Heart className="mr-2 h-4 w-4" />
