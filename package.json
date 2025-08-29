@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postdeploy": "echo Deployed to https://abjshawty.github.io/sk-store"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
